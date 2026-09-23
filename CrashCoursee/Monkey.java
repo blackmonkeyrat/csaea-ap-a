@@ -55,6 +55,6 @@ public class Monkey {
 
     public void birthday() {
         age += 1;
-        System.out.println("It is" + name + " 's birthday!");
+        System.out.println("It is " + name + " 's birthday!");
     }
 }
