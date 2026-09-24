@@ -1,39 +1,44 @@
-public class Monkey {
+public class Cat {
 
-    private double weight;
-    private boolean isHungry;
-    private boolean isThirsty;
     public String name;
-    private int age;
     public String breed;
     public String gender;
+    private boolean isHome;
+    private boolean isHungry;
+    private boolean isThirsty;
+    private int age;
+    private double weight;
+    private double energyLevel;
 
-    public Monkey(String name, String breed, String gender) {
+    public Cat(String name, String breed, String gender) {
         this.name = name;
         this.breed = breed;
         this.gender = gender;
 
-        weight = 40.0;
+        isHome = true;
         isHungry = false;
         isThirsty = false;
-        age = 5;
+        age = 1;
+        weight = 25.6;
 
     }
 
     public void eat(int foodWeight) {
         isHungry = false;
         weight += foodWeight;
-        System.out.println(name + " is eating.");
         if (weight >= 80) {
-            System.out.println(name + " is overweight.");
+            System.out.println(name + " is overweight ");
         }
         else {
-            System.out.println(name + " is healthy weight.");
+            System.out.println(name + " is healthy weight ");
         }
+        System.out.println(name + "'s weight started at " + (weight - foodWeight) + " and is now " + weight);
+
     }
-    
-    public void run() {
+
+    public void runAway(double miles) {
         weight -= 1;
+        energyLevel -= miles;
         System.out.println(name + " is running.");
         if (weight <= 15) {
             System.out.println(name + " is underweight");
@@ -41,7 +46,14 @@ public class Monkey {
         else {
             System.out.println(name + " is healthy weight");
         }
-        if ()
+        if (energyLevel < 0) {
+            energyLevel = 0;
+            System.out.println("You are out of energy.");
+        }
+        if (isHome == false && isHungry == false) {
+            System.out.println(name + "has a new owner");
+        }
+
     }
 
     public void drink() {
@@ -58,4 +70,5 @@ public class Monkey {
         age += 1;
         System.out.println("It is " + name + " 's birthday!");
     }
+
 }
