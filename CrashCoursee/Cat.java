@@ -23,6 +23,22 @@ public class Cat {
 
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String newName) {
+        name = newName;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
     public void eat(int foodWeight) {
         isHungry = false;
         weight += foodWeight;
