@@ -40,7 +40,11 @@ public class Song {
     }
 
     public String getStars() {
-        
+        String stars = "";
+        for (int i = 0; i < plays; i++) {
+            stars += "*";
+        }
+        return stars;
     }
 
 }

@@ -1,0 +1,29 @@
+public class Email {
+    
+    private String address;
+
+    public Email(String address) {
+        this.address = address;
+    }
+
+    public String toString() {
+        return address;
+    }
+
+    public String getDomain() {
+        return address.substring(address.indexOf(".")+1, address.length());
+    }
+
+    //getUser will return everything to the left of the @ symbol in the email address
+    public String getUser() {
+        return address.substring(0, address.indexOf("@"));
+    }
+
+    public boolean isSchool() {
+        return false;
+    }
+
+    public int getAtIndex() {
+        return address.indexOf("@");
+    }
+}
