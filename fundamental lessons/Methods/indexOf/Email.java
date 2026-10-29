@@ -19,11 +19,20 @@ public class Email {
         return address.substring(0, address.indexOf("@"));
     }
 
-    public boolean isSchool() {
-        return false;
-    }
-
     public int getAtIndex() {
         return address.indexOf("@");
     }
+
+    public String getFirstName() {
+        return getUser().substring(0, getUser().indexOf("."));
+    }
+
+    public String changeDomain(String domain) {
+        return this.getUser() + "@" + domain;
+    }
+
+    public boolean isSchool() {
+        return address.indexOf("hcvsd.org") != -1;
+    }
+
 }
