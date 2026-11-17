@@ -85,8 +85,51 @@ public class NativeArrays {
         // HINTS: use an if statement in each pass of the loop
         // redefine element value like this: nums[2] = 6;
         
-        for (int i = 0; i < nums.length; i++) {
-            System.out.println(" index " + i + " -> value " + nums[i]);
+        for (int i = 0; i < temps.length; i++) {
+            if (temps[i] < 0) {
+                temps[i] = 0;
+            }
+            System.out.println(" index " + i + " -> value " + temps[i]);
+        }
+
+        // Challenge: Curve the Scores
+        int[] scorings = {85, 62, 97, 45, 70, 99};
+        // Add 5 to every score, but no score can go above 100. 
+
+        for (int i = 0; i < scorings.length; i++) {
+            scorings[i] = Math.min(scorings[i] + 5, 100);
+        }
+
+        // Challenge: Find the Highest
+        int[] temperatures = {58, 71, 64, 80, 77, 69};
+        // Use a loop to find the highest temperature and the index it's at, then print both. Use Math.max()!
+
+        int highestTemp = temperatures[0];
+        int highestIndex = 0;
+
+        for (int i = 1; i < temperatures.length; i++) {
+            if (temperatures[i] > highestTemp) {
+                highestTemp = temperatures[i];
+                highestIndex = i;
+            }
+        }
+
+        System.out.println("Highest temperature: " + highestTemp);
+        System.out.println("Index: " + highestIndex);
+
+        // Challenge: Random Fill
+        int[] numbers = new int[10];
+        // Loop 10 times. Each time, use Math.random() to get a random number from 1 to 100 and a random index from 0 to 9, then put the number at that index. Print the array. 
+        // Then answer: why are some spots still 0?
+
+        for (int i = 0; i < 10; i++) {
+            int randomNum = (int) (Math.random() * 100) + 1; // Random number from 1 to 100
+            int randomIndex = (int) (Math.random() * numbers.length); // Random index from 0 to 9
+            numbers[randomIndex] = randomNum;
+        }
+        
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " ");
         }
     }
 }
